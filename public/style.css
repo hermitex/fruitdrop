@@ -42,8 +42,8 @@ width: 100%;
 text-align: center;
 opacity: 0.9;
 margin: 0 auto;
-bottom: 0;
-background-color: #252424;
+bottom: 1.2rem;
+/* background-color: #252424; */
 }
 
 .basket img{      
@@ -51,15 +51,18 @@ height: 10vh;
 width: 6rem;
 transition: 2s ease;
 position: relative;
+margin-bottom: 1rem;
 }
-.controller input{
+.controller{
     position: fixed;
-    color: #ffffff;
+    background-color: #252424;
+    margin: 0 auto;
+    bottom: 0;
     height: 5vh;
     width: 100%;
-    margin: 0 auto;
-    bottom: 3rem;
-    background-color: yellow;
+}
+.controller input{
+ width: 100%;
 }
 
 @media screen and (min-width: 48rem){
