@@ -73,3 +73,9 @@ margin: 0 auto;
         margin-top: 45%;
      }
     }
+
+    @media screen and (width: 639px) and (width: 639px){
+        body{
+            background-size: cover;
+        }
+        }
