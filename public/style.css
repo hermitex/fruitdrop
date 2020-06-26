@@ -9,7 +9,6 @@ background-repeat: no-repeat;
 background-size: contain;
 }
 .container{
-height: 100%;
 width: 100%;
 margin: 0 auto;
 overflow: hidden;
@@ -38,23 +37,29 @@ img{
 
 
 .basket{
-/* position: relative;
-bottom: 0;
+position: absolute;
 width: 100%;
-height: 100%;
-
+text-align: center;
 opacity: 0.9;
 margin: 0 auto;
-background-color: #ffffff; */
+bottom: 0;
+background-color: #252424;
 }
 
 .basket img{      
-height: 55vh;  
+height: 10vh;  
 width: 6rem;
-position: absolute;
-bottom: 0;
-transition: 3s ease;
-
+transition: 2s ease;
+position: relative;
+}
+.controller input{
+    position: fixed;
+    color: #ffffff;
+    height: 5vh;
+    width: 100%;
+    margin: 0 auto;
+    bottom: 3rem;
+    background-color: yellow;
 }
 
 @media screen and (min-width: 48rem){

@@ -1,17 +1,14 @@
-const basketContainer = document.querySelector('.basket');
+const controller = document.querySelector('.controller input');
 const basketImage = document.querySelector('.basket img');
 let cursorPosition = window
 let screenWidth = window.innerWidth;
 console.log(cursorPosition)
-console.log(screenWidth)
+console.log(controller.v)
 
 const moveBasket = (e) => {
-    console.log(e.screenX)
-    let randomMargin = Math.floor(Math.random() * screenWidth)
-
-    basketImage.style.right = `${randomMargin}px`;
-
+    console.log(e.target.value)
+    basketImage.style.right = `${e.target.value}px`;
 
 };
 
-basketContainer.onmouseover = moveBasket;
+controller.oninput = moveBasket;
