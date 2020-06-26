@@ -49,7 +49,7 @@ bottom: 1.2rem;
 .basket img{      
 height: 10vh;  
 width: 6rem;
-transition: 0.5s ease;
+transition: margin 0.5s ease linear;
 position: relative;
 margin-bottom: 1rem;
 }
