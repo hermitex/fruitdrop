@@ -32,21 +32,28 @@ img{
 .object img{ 
     position: absolute;   
     height: 2rem;
-    top: 25%;   
+    top: 25%;  
+
 }
 
 
 .basket{
-position: fixed;
+/* position: relative;
 bottom: 0;
 width: 100%;
-background-color: #0a0a0a;
+height: 100%;
+
 opacity: 0.9;
 margin: 0 auto;
+background-color: #ffffff; */
 }
 
 .basket img{      
-    height: 5rem;  
+height: 55vh;  
+width: 6rem;
+position: absolute;
+bottom: 0;
+transition: 3s ease;
 
 }
 
