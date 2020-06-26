@@ -7,7 +7,7 @@ console.log(controller.v)
 
 const moveBasket = (e) => {
     console.log(e.target.value)
-    basketImage.style.right = `${e.target.value}px`;
+    basketImage.style.right = `${e.target.value * 10}px`;
 
 };
 
