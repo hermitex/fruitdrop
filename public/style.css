@@ -1,17 +1,19 @@
 
 body{
-    overflow: hidden;
-}
-.container{
 height: 100vh;
+width: 100vw;
+overflow: hidden;
 background-image: url('../images/tree.png') ;
 background-position: center;
 background-repeat: no-repeat;
-background-size: cover;
-display: flex;
-flex-direction: row;
-text-align: center;  
-align-items: center; 
+background-size: contain;
+}
+.container{
+height: 100%;
+width: 100%;
+margin: 0 auto;
+overflow: hidden;
+
 }
 img{
     height: 1.8rem;
@@ -20,24 +22,21 @@ img{
 .objects{     
     display: flex;
     width: 90%;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin: 0 auto;
-    margin-bottom: 25rem;
+  
 }
-.object img{
+.object{
+   margin-top: 50%;
+}
+.object img{    
     height: 2rem;
     top: 7rem;   
 }
 
 
 .basket{
-  position: fixed;
-  bottom: 0;
-  width: 100vw;
-  height: 5rem; 
-  background: #0a0a0a;
-  opacity: 0.9;
-  text-align: center;
+
 }
 
 .basket img{      
@@ -45,3 +44,26 @@ img{
 
 }
 
+@media screen and (min-width: 48rem){
+    body{
+        background-size: cover;
+    }
+    .object{
+        margin-top: 5%;
+     }
+     .objects img{
+         height: 5rem;
+     }
+}
+
+@media screen and (width: 375px) and (width: 375px){
+    .object{
+        margin-top: 75%;
+     }
+   
+}
+@media screen and (width: 768px) and (width: 768px){
+    .object{
+        margin-top: 45%;
+     }
+    }
