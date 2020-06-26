@@ -61,9 +61,31 @@ margin-bottom: 1rem;
     height: 5vh;
     width: 100%;
 }
+
 .controller input{
  width: 100%;
+cursor: pointer;
 }
+
+/* .blink {
+    animation: blinker 1s linear infinite;
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0.85;
+    }
+  } */
+
+  .blink-quick {
+    animation: blinker 1.5s linear infinite;
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0.75;
+    }
+  }
 
 @media screen and (min-width: 48rem){
     body{
