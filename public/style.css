@@ -1,3 +1,7 @@
+
+body{
+    overflow: hidden;
+}
 .container{
 height: 100vh;
 background-image: url('../images/tree.png') ;
