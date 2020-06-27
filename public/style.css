@@ -7,10 +7,17 @@ background-image: url('../images/tree.png') ;
 background-position: center;
 background-repeat: no-repeat;
 background-size: contain;
+font-family: 'Montserrat Alternates', sans-serif;
 }
 .stats{
     display: flex;
     justify-content: space-between;
+    font-size: 1.2rem;
+}
+.stats input{ outline: none;
+    border: none;
+    border: 0.1px solid #0275d8 !important;   
+    border-radius: 0.5rem; 
 }
 .controlls ul{
   display: flex;
