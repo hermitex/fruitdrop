@@ -8,6 +8,19 @@ background-position: center;
 background-repeat: no-repeat;
 background-size: contain;
 }
+.stats{
+    display: flex;
+    justify-content: space-between;
+}
+.controlls ul{
+  display: flex;
+  justify-content: space-between;
+}
+.controlls li{
+    list-style: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
 .container{
 width: 100%;
 margin: 0 auto;
@@ -48,6 +61,7 @@ img{
 
     animation-fill-mode: forwards;
 }
+
 @keyframes fall {
     from {
         position: absolute;
@@ -114,7 +128,7 @@ margin-bottom: 1rem;
     right: 0;
     height: 5vh;
     width: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .controller input{
@@ -166,4 +180,8 @@ cursor: pointer;
         body{
             background-size: cover;
         }
+        .basket img{
+            width: 7rem;
+            height: 7rem;
+         }
         }
