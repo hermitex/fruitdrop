@@ -18,21 +18,70 @@ img{
     height: 1.8rem;
 }
 
-.objects{     
+.objects{ 
     display: flex;
-    width: 90%;
+    flex-direction: row;
     justify-content: space-evenly;
-    margin: 0 auto;
-  
+   
+    overflow: hidden;
+    position: relative;    
+    height: 100vh;  
+    width: 100%;   
+    margin: 0  auto;
+ 
 }
-.object{
-   margin-top: 50%;
-}
-.object img{ 
-    position: absolute;   
-    height: 2rem;
-    top: 25%;  
 
+.game-item{     
+    display: flex;
+    position: absolute;
+    top: -450px;
+    /* opacity: .85; */
+    animation: fall ease-in infinite; 
+
+    -webkit-animation: fall ease-in infinite;
+
+    -moz-animation: fall ease-in infinite;
+
+    -webkit-animation-fill-mode: forwards;
+
+    -moz-animation-fill-mode: forwards;
+
+    animation-fill-mode: forwards;
+}
+@keyframes fall {
+    from {
+        position: absolute;
+        top: -450px;
+    }
+
+    to {
+        position: absolute;
+        top: 790px;
+    }
+}
+
+@-webkit-keyframes fall {
+    from {
+        position: absolute;
+        top: -450px;
+    }
+
+    to {
+        position: absolute;
+        top: 633px;
+    }
+}
+
+@-moz-keyframes fall {
+    from {
+        position: absolute;
+        top: -450px;
+    }
+
+    to {
+        position: absolute;
+        top: 633px;
+    }
 }
 
 
@@ -67,16 +116,6 @@ margin-bottom: 1rem;
 cursor: pointer;
 }
 
-/* .blink {
-    animation: blinker 1s linear infinite;
-  }
-  
-  @keyframes blinker {
-    50% {
-      opacity: 0.85;
-    }
-  } */
-
   .blink-quick {
     animation: blinker 1.5s linear infinite;
   }
@@ -86,6 +125,8 @@ cursor: pointer;
       opacity: 0.75;
     }
   }
+
+
 
 @media screen and (min-width: 48rem){
     body{
