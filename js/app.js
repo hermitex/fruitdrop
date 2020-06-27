@@ -104,16 +104,16 @@ window.onload = function () {
         return (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) ? false : true;
     }
     // gameItems.forEach(image => collission(image, basketDiv))
-    if (window.innerWidth < 1100) {
+    {
         $(document).on('touchstart', e => {
-            $(basketImage).offset({ left: e.pageX });
+            // $(basketImage).offset({ left: e.pageX });
             // basketDiv.css('right', e.page);
             // basketDiv.css('top', e.page);
             // basketDiv.css('bottom', e.page);
         });
     }
     $(document).on('mousemove', e => {
-        $(basketImage).offset({ left: e.pageX });
+        // $(basketImage).offset({ left: e.pageX });
         // basketDiv.css('right', e.page);
         // basketDiv.css('top', e.page);
         // basketDiv.css('bottom', e.page);
