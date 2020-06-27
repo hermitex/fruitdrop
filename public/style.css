@@ -11,7 +11,7 @@ background-size: contain;
 .container{
 width: 100%;
 margin: 0 auto;
-overflow: hidden;
+overflow: hidden ;
 
 }
 img{
@@ -92,6 +92,9 @@ text-align: center;
 opacity: 0.9;
 margin: 0 auto;
 bottom: 1.2rem;
+left: 0;
+right: 0;
+overflow: hidden;
 /* background-color: #252424; */
 }
 
@@ -111,6 +114,7 @@ margin-bottom: 1rem;
     right: 0;
     height: 5vh;
     width: 100%;
+    overflow-x: hidden;
 }
 
 .controller input{
@@ -139,6 +143,10 @@ cursor: pointer;
      }
      .objects img{
          height: 5rem;
+     }
+     .basket img{
+        width: 20rem;
+        height: 20rem;
      }
 }
 
