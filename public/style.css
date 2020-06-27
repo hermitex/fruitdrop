@@ -9,6 +9,7 @@ background-repeat: no-repeat;
 background-size: contain; */
 font-family: 'Montserrat Alternates', sans-serif;
 }
+
 .stats{
     display: flex;
     justify-content: space-between;
@@ -118,10 +119,11 @@ bottom: 1.2rem;
 left: 0;
 right: 0;
 overflow: hidden;
+
 /* background-color: #252424; */
 }
 
-.basket img{      
+.basket img{   
 height: 10vh;  
 width: 6rem;
 transition:  0.75s ease linear;
@@ -194,3 +196,7 @@ cursor: pointer;
             height: 7rem;
          }
         }
+
+
+
+        
