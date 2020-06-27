@@ -4,95 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./public/bootswatch.css">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 
 <body>
-    <style type="text/css">
-        .snowContainer {
-            width: 100%;
-            height: 300px;
-            background-color: black;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .snowExample {
-            position: absolute;
-            top: -450px;
-            opacity: .5;
-            text-align: center;
-
-            animation: SnowExampleSlide ease-in infinite;
-
-            -webkit-animation: SnowExampleSlide ease-in infinite;
-
-            -moz-animation: SnowExampleSlide ease-in infinite;
-
-            -webkit-animation-fill-mode: forwards;
-
-            -moz-animation-fill-mode: forwards;
-
-            animation-fill-mode: forwards;
-        }
-
-        @keyframes SnowExampleSlide {
-            from {
-                position: absolute;
-                top: -450px;
-            }
-
-            to {
-                position: absolute;
-                top: 633px;
-            }
-        }
-
-        @-webkit-keyframes SnowExampleSlide {
-            from {
-                position: absolute;
-                top: -450px;
-            }
-
-            to {
-                position: absolute;
-                top: 633px;
-            }
-        }
-
-        @-moz-keyframes SnowExampleSlide {
-            from {
-                position: absolute;
-                top: -450px;
-            }
-
-            to {
-                position: absolute;
-                top: 633px;
-            }
-        }
-    </style>
-
-    <div class="snowContainer">
-
-        <img alt="snowflakes" src="/Articles/CSS/Create-Falling-Objects-in-CSS/ClaytabaseSnow.png" class="snowExample"
-            style="width: 400px; -webkit-animation-delay: 0s;animation-delay: 0s;-webkit-animation-duration: 4s;animation-duration: 4s; left:50%; margin-left: -200px;" />
-
-        <img alt="snowflakes" src="/Articles/CSS/Create-Falling-Objects-in-CSS/ClaytabaseSnow.png" class="snowExample"
-            style="width: 400px; -webkit-animation-delay: 1s;animation-delay: 1s;-webkit-animation-duration: 4s;animation-duration: 4s; left:50%; margin-left: -200px;" />
-
-        <img alt="snowflakes" src="/Articles/CSS/Create-Falling-Objects-in-CSS/ClaytabaseSnow.png" class="snowExample"
-            style="width: 400px; -webkit-animation-delay: 2s;animation-delay: 2s; -webkit-animation-duration: 4s;animation-duration: 4s; left:50%; margin-left: -200px;" />
-
-        <img alt="snowflakes" src="/Articles/CSS/Create-Falling-Objects-in-CSS/ClaytabaseSnow.png" class="snowExample"
-            style="width: 400px; -webkit-animation-delay: 3s;animation-delay: 3s; -webkit-animation-duration: 4s;animation-duration: 4s; left:50%; margin-left: -200px;" />
-
-        <img alt="snowflakes" src="/Articles/CSS/Create-Falling-Objects-in-CSS/ClaytabaseSnow.png" class="snowExample"
-            style="width: 500px; -webkit-animation-delay: 0s;animation-delay: 0s; -webkit-animation-duration: 5s;animation-duration: 5s; left:50%; margin-left: -250px;" />
-
-        <img alt="snowflakes" src="/Articles/CSS/Create-Falling-Objects-in-CSS/ClaytabaseSnow.png" class="snowExample"
-            style="width: 500px; -webkit-animation-delay: 2s;animation-delay: 2s; -webkit-animation-duration: 5s;animation-duration: 5s; left:50%; margin-left: -250px;" />
-
+    <div class="container">
+        <div class="accordion" id="accordionExample">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+                            data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Collapsible Group Item #1
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                    data-parent="#accordionExample">
+                    <div class="card-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                        3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                        laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
+                        coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes
+                        anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                        occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard
+                        of them accusamus labore sustainable VHS.
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 
