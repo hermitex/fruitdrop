@@ -35,7 +35,7 @@ img{
     display: flex;
     position: absolute;
     top: -450px;
-    /* opacity: .85; */
+    opacity: .85;
     animation: fall ease-in infinite; 
 
     -webkit-animation: fall ease-in infinite;
@@ -98,7 +98,7 @@ bottom: 1.2rem;
 .basket img{      
 height: 10vh;  
 width: 6rem;
-transition: margin 0.5s ease linear;
+transition:  0.75s ease linear;
 position: relative;
 margin-bottom: 1rem;
 }
@@ -107,6 +107,8 @@ margin-bottom: 1rem;
     background-color: #252424;
     margin: 0 auto;
     bottom: 0;
+    left: 0;
+    right: 0;
     height: 5vh;
     width: 100%;
 }
@@ -122,7 +124,7 @@ cursor: pointer;
   
   @keyframes blinker {
     50% {
-      opacity: 0.75;
+      opacity: 0.5;
     }
   }
 
