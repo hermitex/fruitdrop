@@ -22,6 +22,8 @@ font-family: 'Montserrat Alternates', sans-serif;
 .controlls ul{
   display: flex;
   justify-content: space-between;
+  width: 100%;
+padding: 0;
 }
 .controlls li{
     list-style: none;
