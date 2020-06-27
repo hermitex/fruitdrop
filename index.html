@@ -56,6 +56,25 @@
                                 pause the game or stop as you wish</li>
                         </ul>
                     </div>
+                    <div id="music">
+                        <ul class="list-group" id="">
+                            <li><a class="track btn btn-primary"
+                                    href="http://jPlayer.org/audio/mp3/gbreggae-leadguitar.mp3">Lead
+                                    Guitar</a>
+                            </li>
+                            <li><a class="track btn btn-primary"
+                                    href="http://jPlayer.org/audio/mp3/gbreggae-drums.mp3">Drums</a></li>
+                            <li><a class="track btn btn-primary"
+                                    href="http://jPlayer.org/audio/mp3/gbreggae-bassguitar.mp3">Bass
+                                    Guitar</a>
+                            </li>
+                            <li><a class="track btn btn-primary"
+                                    href="http://jPlayer.org/audio/mp3/gbreggae-horns.mp3">Horns</a></li>
+                            <li><a class="track btn btn-primary"
+                                    href="http://jPlayer.org/audio/mp3/gbreggae-clav.mp3">Clavi</a></li>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -91,8 +110,6 @@
             <div>
                 <img class='game-item' src="./images/apple-158227_640.png" alt=""
                     style=" -webkit-animation-delay: 3s;animation-delay: 3s; -webkit-animation-duration: 4.5s;animation-duration: 4.5s; " />
-
-
             </div>
 
 
@@ -121,7 +138,6 @@
             <div>
                 <img class='game-item' src="./images/hornet.png" alt=""
                     style=" -webkit-animation-delay: 1.2s;animation-delay: 1.2s; -webkit-animation-duration: 7.5s;animation-duration: 7.5s; ">
-
             </div>
 
 
@@ -135,6 +151,65 @@
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="js/app.js"></script>
+
+        <script>
+            window.AudioContext = window.AudioContext || window.webkitAudioContext;
+
+            var offset = 0;
+            var context = new AudioContext();
+
+            var tempo = 3.074074076;
+
+
+            function playTrack(url) {
+                var request = new XMLHttpRequest();
+                request.open('GET', url, true);
+                request.responseType = 'arraybuffer';
+
+                var audiobuffer;
+
+                // Decode asynchronously
+                request.onload = function () {
+
+                    if (request.status == 200) {
+
+                        context.decodeAudioData(request.response, function (buffer) {
+                            var source = context.createBufferSource();
+                            source.buffer = buffer;
+                            source.connect(context.destination);
+                            console.log('context.currentTime ' + context.currentTime);
+
+                            if (offset == 0) {
+                                source.start();
+                                offset = context.currentTime;
+                            } else {
+                                var relativeTime = context.currentTime - offset;
+                                var beats = relativeTime / tempo;
+                                var remainder = beats - Math.floor(beats);
+                                var delay = tempo - (remainder * tempo);
+                                source.start(context.currentTime + delay, relativeTime + delay);
+                            }
+
+                        }, function (e) {
+                            console.log('Error decoding audio data:' + e);
+                        });
+                    } else {
+                        console.log('Audio didn\'t load successfully; error code:' + request.statusText);
+                    }
+                }
+                request.send();
+            }
+
+            var tracks = document.getElementsByClassName('track');
+
+            for (var i = 0, len = tracks.length; i < len; i++) {
+                tracks[i].addEventListener('click', function (e) {
+                    console.log(this.href);
+                    playTrack(this.href);
+                    e.preventDefault();
+                });
+            }
+        </script>
 </body>
 
 </html>

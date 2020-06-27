@@ -23,32 +23,73 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="accordion" id="accordionExample">
-            <div class="card">
-                <div class="card-header" id="headingOne">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
-                            data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Collapsible Group Item #1
-                        </button>
-                    </h2>
-                </div>
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                    data-parent="#accordionExample">
-                    <div class="card-body">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                        3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-                        laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
-                        coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes
-                        anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-                        occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard
-                        of them accusamus labore sustainable VHS.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <section id="">
+        <ul>
+            <li><a class="track" href="http://jPlayer.org/audio/mp3/gbreggae-leadguitar.mp3">Lead Guitar</a></li>
+            <li><a class="track" href="http://jPlayer.org/audio/mp3/gbreggae-drums.mp3">Drums</a></li>
+            <li><a class="track" href="http://jPlayer.org/audio/mp3/gbreggae-bassguitar.mp3">Bass Guitar</a></li>
+            <li><a class="track" href="http://jPlayer.org/audio/mp3/gbreggae-horns.mp3">Horns</a></li>
+            <li><a class="track" href="http://jPlayer.org/audio/mp3/gbreggae-clav.mp3">Clavi</a></li>
+        </ul>
+    </section>
+    <script>
+        window.AudioContext = window.AudioContext || window.webkitAudioContext;
+
+        var offset = 0;
+        var context = new AudioContext();
+
+        var tempo = 3.074074076;
+
+
+        function playTrack(url) {
+            var request = new XMLHttpRequest();
+            request.open('GET', url, true);
+            request.responseType = 'arraybuffer';
+
+            var audiobuffer;
+
+            // Decode asynchronously
+            request.onload = function () {
+
+                if (request.status == 200) {
+
+                    context.decodeAudioData(request.response, function (buffer) {
+                        var source = context.createBufferSource();
+                        source.buffer = buffer;
+                        source.connect(context.destination);
+                        console.log('context.currentTime ' + context.currentTime);
+
+                        if (offset == 0) {
+                            source.start();
+                            offset = context.currentTime;
+                        } else {
+                            var relativeTime = context.currentTime - offset;
+                            var beats = relativeTime / tempo;
+                            var remainder = beats - Math.floor(beats);
+                            var delay = tempo - (remainder * tempo);
+                            source.start(context.currentTime + delay, relativeTime + delay);
+                        }
+
+                    }, function (e) {
+                        console.log('Error decoding audio data:' + e);
+                    });
+                } else {
+                    console.log('Audio didn\'t load successfully; error code:' + request.statusText);
+                }
+            }
+            request.send();
+        }
+
+        var tracks = document.getElementsByClassName('track');
+
+        for (var i = 0, len = tracks.length; i < len; i++) {
+            tracks[i].addEventListener('click', function (e) {
+                console.log(this.href);
+                playTrack(this.href);
+                e.preventDefault();
+            });
+        }
+    </script>
 </body>
 
 </html>

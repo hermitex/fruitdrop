@@ -41,6 +41,9 @@ overflow: hidden ;
 img{
     height: 1.8rem;
 }
+#music ul{
+    display: flex !important;
+}
 
 .objects{ 
     display: flex;
@@ -133,7 +136,7 @@ margin-bottom: 1rem;
 padding: 0;
 margin-left: 0;
 margin-right: 0;
-z-index: 30;
+
 }
 .controller{
     position: fixed;
