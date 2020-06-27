@@ -3,6 +3,9 @@ const basketImage = document.querySelector('.basket img');
 const gameItems = document.querySelectorAll('.game-item');
 const controls = document.querySelectorAll('.control');
 const instructions = document.querySelector('.f');
+const basketDiv = document.querySelector('.basket');
+const div = document.querySelector('#div1');
+
 
 const playGame = (e) => {
     if (e.target.classList.contains('play')) {
@@ -72,11 +75,53 @@ const moveBasket = (e) => {
     }
 };
 
-gameItems.forEach(image => console.log(image))
+
 
 controller.oninput = moveBasket;
 
 controls.forEach(control => {
-    console.log(control)
     control.onclick = playGame;
 });
+
+
+// TESTING COLLISSION FUNCTION
+// let div1 = document.getElementById('div1')
+
+window.onload = function () {
+    const collission = ($div1, $div2) => {
+        let x1 = $div1.offset().left;
+        let y1 = $div1.offset().top;
+        let h1 = $div1.outerHeight(true)
+        let w1 = $div1.outerHeight(true)
+        let b1 = y1 + h1;
+        let r1 = x1 + w1;
+        let x2 = $div2.offset().left;
+        let y2 = $div2.offset().top;
+        let h2 = $div2.outHeight(true)
+        let w2 = $div2.outHeight(true)
+        let b2 = y2 + h2;
+        let r2 = x2 + w2;
+        return (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) ? false : true;
+    }
+    // gameItems.forEach(image => collission(image, basketDiv))
+    $(document).on('mousemove', e => {
+        $(basketImage).offset({ left: e.pageX });
+        // basketDiv.css('right', e.page);
+        // basketDiv.css('top', e.page);
+        // basketDiv.css('bottom', e.page);
+    });
+
+}
+// console.log($(document))
+// var offset = $(basketDiv).offset();
+// var top = offset.top;
+// var left = offset.left;
+// console.log(offset)
+
+// gameItems.forEach(image => {
+//     var offset = $(image).offset();
+//     var top = offset.top;
+//     var left = offset.left;
+//     console.log(offset.top)
+// });
+

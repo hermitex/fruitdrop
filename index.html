@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <script src="https://kit.fontawesome.com/bcbb5e63ec.js" crossorigin="anonymous" SameSite SameSite=None></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -58,7 +59,7 @@
                 </div>
             </div>
         </div>
-        <div class="stats">
+        <div id="div1" class="stats">
             <input class="bg-secondary text-success" type="button" value="Lives: 20">
             <input class="bg-secondary text-success" type="button" value="Score: 11">
         </div>
@@ -127,12 +128,12 @@
 
         </div>
         <div class="basket">
-            <img class="blink-quick" src="./images/basket-312685.svg" alt="">
+            <img id="div1" class="blink-quick" src="./images/basket-312685.svg" alt="">
         </div>
         <div class="controller">
-            <input type="range" min="-15" max="18" step="0.1">
+            <input style="display: none;" type="range" min="-15" max="18" step="0.1">
         </div>
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="js/app.js"></script>
 </body>
 
