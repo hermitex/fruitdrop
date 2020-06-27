@@ -126,7 +126,7 @@ overflow: hidden;
 .basket img{   
 height: 10vh;  
 width: 6rem;
-transition:  0.75s ease linear;
+transition: 5s ease-in-out linear;
 position: relative;
 margin-bottom: 1rem;
 padding: 0;
