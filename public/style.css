@@ -129,6 +129,9 @@ width: 6rem;
 transition:  0.75s ease linear;
 position: relative;
 margin-bottom: 1rem;
+padding: 0;
+margin-left: 0;
+margin-right: 0;
 }
 .controller{
     position: fixed;
