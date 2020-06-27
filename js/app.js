@@ -8,7 +8,7 @@ const moveBasket = (e) => {
 
     if (screenWidth >= 450) {
         console.log(screenWidth)
-        basketImage.style.right = `${e.target.value * 35}px`;
+        basketImage.style.right = `${e.target.value * 36}px`;
     } else {
         basketImage.style.right = `${e.target.value * 10}px`;
     }
